@@ -34,7 +34,7 @@ public class JobServiceImpl implements JobService {
     //Получаем список заданий
     @Override
     public List<PlanJobInfoEntity> getSchedulerList() {
-        List<PlanJobInfoEntity> schedulerListDtos = schedulerListRepository.findAll();
+        List<PlanJobInfoEntity> schedulerListDtos = schedulerListRepository.getActiveJobList();
         List<PlanJobInfoEntity> resultList = schedulerListDtos.stream().sorted(Comparator.comparing(PlanJobInfoEntity::getTime)).collect(Collectors.toList());
         return resultList;
     }

@@ -25,8 +25,6 @@ public class ConstantsProject {
     public static final String JOB_NAME = "jobName";
 
 
-
-
     public static final String IS_ACTIVE_TRUE = "true";
     public static final String IS_ACTIVE_FALSE = "false";
     public static final String PRIORITY_NOW = "now";
@@ -41,7 +39,9 @@ public class ConstantsProject {
     public static final String JOB_NOT_FOUND_EXCEPTION = "Job not found";
     public static final String JOB_INTERVAL_TIME_EXCEPTION = "Job execution time exceeds start interval";
 
-    public static final String ONLY_LATIN = "^[a-zA-Z]+$";
+    public static final String VALID_JOB_NAME_ONLY_LATIN_PATTERN = "^[a-zA-Z]+$";
+    public static final String VALID_IS_ACTIVE_VALUE_PATTERN = "^(true|false)$";
+    public static final String PRIORITY_VALUE_PATTERN = "^(schedule|now)$";
 
 
 }

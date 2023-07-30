@@ -5,12 +5,12 @@ import lombok.RequiredArgsConstructor;
 
 import static com.example.run_scheduler.constants_project.ConstantsProject.*;
 
-@Getter
+//@Getter
 @RequiredArgsConstructor
 public enum PrepareJobErrorsImpl implements ErrorApplication{
 
     NOT_FOUND_PRIORITY_AND_IS_ACTIVE_EXCEPTION(-2000,"Отсутствуют значения для полей"),
-    VALID_IS_ACTIVE_EXCEPTION(-2001,"Введены не корректные параметры в " + IS_ACTIVE_PARAM),
+    VALID_IS_ACTIVE_EXCEPTION(-2001,"Введены не корректные параметры в " + IS_ACTIVE_PARAM + " должен быть 'true' или 'false' в нижнем регистре"),
     VALID_PRIORITY_EXCEPTION(-2002,"Введены не корректные параметры в " + PRIORITY_PARAM),
     NOT_FOUND_OBJECT_EXCEPTION(-2003,"Объект не найден"),
     VALID_JOB_NAME_EXCEPTION(-2004,"Введены не корректные параметры в " + JOB_NAME);
@@ -18,4 +18,13 @@ public enum PrepareJobErrorsImpl implements ErrorApplication{
     private final int code;
     private final String message;
 
+    @Override
+    public int getCode() {
+        return code;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
 }

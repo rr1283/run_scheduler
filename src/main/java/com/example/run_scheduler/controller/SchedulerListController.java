@@ -8,6 +8,7 @@ import com.example.run_scheduler.exception.ValidFildsException;
 import com.example.run_scheduler.service.JobService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -60,7 +61,7 @@ public class SchedulerListController {
 
     @Operation(summary = "регистрация новой джобы")
     @PostMapping(SCHEDULER_LIST_ADD_NEW_JOB)
-    public void addNewJob(@RequestBody SchedulerListDto schedulerListDto) {
+    public void addNewJob(@Valid @RequestBody SchedulerListDto schedulerListDto) {
         runSchedulerService.addNewJobForSchedulerList(schedulerListDto);
     }
 
